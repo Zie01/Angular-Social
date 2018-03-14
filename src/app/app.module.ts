@@ -1,8 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -37,10 +43,17 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     messagingSenderId: "824239301917"
   };
 
+let routes = [
+  { path: "redirectTo:"login", pathMatch: "ful"},
+  { path: "login", component: LoginCOmponent},
+  { path: "register", component: RegisterComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +67,9 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     UiModule,
     NotesModule,
     AngularFireModule.initializeApp(firebaseConfig)
+    HttpModule,
+    RouterModule,
+    RouterModule.forRoot(routes)
   ],
    bootstrap: [
     AppComponent,
