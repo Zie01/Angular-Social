@@ -1,4 +1,4 @@
-mport { Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
