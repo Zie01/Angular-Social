@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/loading.scss";
+@import "./styles/firestarter.scss";
+
+
 body {
     background: #222427;
     padding: 2em;
